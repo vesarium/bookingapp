@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Booking Confirmation</title>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h3>Booking Confirmed!!!</h3>
+            <center>
+                
+                <table>
+                    <tr>
+                        <td>Name :- </td>
+                        <td>{{ firstname ~ ' ' ~ lastname }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email :- </td>
+                        <td>{{ email }}</td>
+                    </tr>
+                    <tr>
+                        <td>Phone :- </td>
+                        <td>{{ phoneno }}</td>
+                    </tr>
+                    <tr>
+                        <td>Date :- </td>
+                        <td>{{ booking_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>From :- </td>
+                        <td>{{ from_time }}</td>
+                    </tr>
+                    <tr>
+                        <td>To :- </td>
+                        <td>{{ to_time }}</td>
+                    </tr>
+                    <tr>
+                        <td>Persons :- </td>
+                        <td>{{ persons }}</td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </body>
+</html>

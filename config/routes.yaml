@@ -1,3 +1,15 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+homepage:
+    path: /
+    controller: App\Controller\BookingController::index
+
+book-appointment:
+    path: /book-appointment
+    controller: App\Controller\BookingController::bookAppointment
+
+add-appointment:
+    path: /add-appointment
+    controller: App\Controller\BookingController::addAppointment
+
+fetch-appointment-days:
+    path: /fetch-appointment-days
+    controller: App\Controller\BookingController::fetchAppointmentDays

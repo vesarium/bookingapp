@@ -1,4 +1,12 @@
 twig:
+    globals:
+        admin_email: '%app.admin_email%'
+        start_time: '%app.start_time%'
+        session_length: '%app.session_length%'
+        break_bw_sessions: '%app.break_bw_sessions%'
+        max_weeks: '%app.max_weeks%'
+        max_sessions: '%app.max_sessions%'
+        max_persons: '%app.max_persons%'
     default_path: '%kernel.project_dir%/templates'
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
