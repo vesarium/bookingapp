@@ -1,3 +1,13 @@
+dashboard:
+    path: /dashboard
+    controller: App\Controller\DashboardController::index
+
+delete-appointment:
+    path: /delete-appointment/{id}
+    controller: App\Controller\DashboardController::deleteAppointment
+    defaults:
+        id: ''
+
 homepage:
     path: /
     controller: App\Controller\BookingController::index

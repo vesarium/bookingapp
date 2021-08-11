@@ -20,7 +20,7 @@ class BookingsRepository extends ServiceEntityRepository
         parent::__construct($registry, Bookings::class);
     }
     
-   public function getBookedAppointment($date, $days) {
+    public function getBookedAppointment($date, $days) {
        $endDate = new DateTime(date('Y-m-d', strtotime($date->format('Y-m-d'))));
        $endDate->modify('+'.$days.' day');
        return $this->createQueryBuilder('b')
@@ -30,5 +30,25 @@ class BookingsRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
-   }
+       $endDate = new DateTime(date('Y-m-d', strtotime($date->format('Y-m-d'))));
+       $endDate->modify('+'.$days.' day');
+       return $this->createQueryBuilder('b')
+            ->where('b.booking_date BETWEEN :start_date AND :end_date')
+            ->setParameter('start_date', $date->format('Y-m-d'))
+            ->setParameter('end_date', $endDate->format('Y-m-d'))
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
+    public function getBookings() {
+        $date = new DateTime(date('Y-m-d'));
+        return $this->createQueryBuilder('b')
+             ->where('b.booking_date >= :date')
+             ->orderBy('b.id', 'ASC')
+             ->setParameter('date', $date->format('Y-m-d'))
+             ->getQuery()
+             ->getArrayResult()
+         ;
+    }
 }
